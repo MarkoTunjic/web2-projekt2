@@ -1,0 +1,9 @@
+.openapi-generator-ignore
+apis/CommentControlerApi.ts
+apis/PrincipalControllerApi.ts
+apis/index.ts
+index.ts
+models/CommentDTO.ts
+models/PrincipalDTO.ts
+models/index.ts
+runtime.ts
