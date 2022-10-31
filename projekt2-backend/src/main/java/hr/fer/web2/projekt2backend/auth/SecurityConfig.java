@@ -45,11 +45,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .cors().and().authorizeRequests()
+                .cors().and().csrf().disable().authorizeRequests()
                 .anyRequest().permitAll()
                 .and()
                 .oauth2ResourceServer().jwt();
-
         return http.build();
     }
 }

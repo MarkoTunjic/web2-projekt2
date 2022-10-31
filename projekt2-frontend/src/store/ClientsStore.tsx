@@ -2,17 +2,22 @@ import React, { PropsWithChildren, useCallback, useMemo } from "react";
 import { Configuration, CommentControlerApi, PrincipalControllerApi } from "../api";
 import { useAuth0 } from "@auth0/auth0-react";
 import configData from "../config.json";
+import { AuthenticationControllerApi } from "../api/apis/AuthenticationControllerApi";
 
 interface ClientsContextState {
     commentClient: CommentControlerApi,
-    principalClient: PrincipalControllerApi
+    principalClient: PrincipalControllerApi,
+    authClient: AuthenticationControllerApi
 }
 
 const defaultCommentClient: CommentControlerApi = new CommentControlerApi();
 const defaultPrincipalClient: PrincipalControllerApi = new PrincipalControllerApi();
+const defaultAuthClient: AuthenticationControllerApi = new AuthenticationControllerApi();
+
 export const ClientsContext = React.createContext<ClientsContextState>({
     commentClient: defaultCommentClient,
-    principalClient: defaultPrincipalClient
+    principalClient: defaultPrincipalClient,
+    authClient: defaultAuthClient
 });
 
 interface ClientsContextProviderProps {
@@ -34,12 +39,11 @@ function ClientsContextProvider(props: PropsWithChildren<ClientsContextProviderP
     }, [getAccessTokenSilently, isAuthenticated]);
 
     const contextState: ClientsContextState = useMemo(() => {
-        let clients: ClientsContextState = {
+        return {
             commentClient: new CommentControlerApi(new Configuration({ accessToken: getAccessToken })),
-            principalClient: new PrincipalControllerApi(new Configuration({ accessToken: getAccessToken }))
-        };
-
-        return clients;
+            principalClient: new PrincipalControllerApi(new Configuration({ accessToken: getAccessToken })),
+            authClient: new AuthenticationControllerApi(new Configuration({ accessToken: getAccessToken }))
+        }
     }, [getAccessToken]);
 
 

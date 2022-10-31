@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import hr.fer.web2.projekt2backend.service.CommentService;
 
 @RestController
 @RequestMapping("/comments")
+@CrossOrigin
 public class CommentControler {
     private final CommentService commentService;
 

@@ -1,4 +1,4 @@
-.openapi-generator-ignore
+apis/AuthenticationControllerApi.ts
 apis/CommentControlerApi.ts
 apis/PrincipalControllerApi.ts
 apis/index.ts
