@@ -1,0 +1,10 @@
+CREATE TABLE comment(
+	id BIGSERIAL PRIMARY KEY,
+	comment_text TEXT NOT NULL
+);
+
+CREATE TABLE principal(
+	id BIGSERIAL PRIMARY KEY,
+	email VARCHAR(320) UNIQUE,
+	principal_type INT NOT NULL
+)
