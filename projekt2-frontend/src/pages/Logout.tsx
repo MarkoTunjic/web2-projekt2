@@ -14,7 +14,7 @@ function Logout() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            logout({ returnTo: "http://localhost:3000/#/user/bad-access-control" });
+            logout({ returnTo: "https://web2-projekt2-backend.onrender.com/#/user/bad-access-control" });
         } else {
             navigate("/user/bad-access-control");
         }
