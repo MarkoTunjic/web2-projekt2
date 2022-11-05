@@ -26,7 +26,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "codegen-dev": "curl -k  http://localhost:8080/v3/api-docs > ./api.json && java -jar modules/openapi-generator-cli.jar generate -i ./api.json -g typescript-fetch -o src/api"
+        "codegen-dev": "curl -k  http://localhost:8080/v3/api-docs > ./api.json && java -jar modules/openapi-generator-cli.jar generate -i ./api.json -g typescript-fetch -o src/api",
+        "codegen-prod": "curl -k  https://web2-projekt2-backend.onrender.com/v3/api-docs > ./api.json && java -jar modules/openapi-generator-cli.jar generate -i ./api.json -g typescript-fetch -o src/api"
+
     },
     "eslintConfig": {
         "extends": [

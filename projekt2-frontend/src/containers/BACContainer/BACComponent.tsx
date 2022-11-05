@@ -47,7 +47,7 @@ const BACComponent = (props: BACComponentProps) => {
     }
 
     return <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-        <h1>Bad access control</h1>
+        <h1>Bad access control (to perform actions change the string "user" to "admin" or vice versa)</h1>
         {isAuthenticated ?
             <Link onClick={() => navigate("/logout")} sx={{
                 ":hover": {
