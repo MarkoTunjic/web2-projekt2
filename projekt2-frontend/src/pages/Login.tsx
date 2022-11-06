@@ -15,7 +15,7 @@ function Login() {
 
     async function getPrincipal() {
         if (!isAuthenticated) {
-            await loginWithRedirect({ redirectUri: "http://localhost:3000/#/admin/bad-access-control" });
+            await loginWithRedirect({ redirectUri: "https://web2-projekt2-backend.onrender.com/#/admin/bad-access-control" });
         } else {
             navigate("/admin/bad-access-control");
         }
